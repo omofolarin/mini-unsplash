@@ -11,8 +11,9 @@ const Hero = () => {
   return (
     <div className="hero__centralize hero__root">
       <Container>
-        {pathname === "/" && <SearchInput />}
-        {pathname !== "/" && (
+        {pathname === "/" ||
+          (pathname === "/mini-unsplash/" && <SearchInput />)}
+        {pathname !== "/" && pathname !== "/mini-unsplash/" && (
           <h1>Search Results for "{pathname.substring(1)}"</h1>
         )}
       </Container>

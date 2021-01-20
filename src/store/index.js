@@ -14,18 +14,29 @@ const useStore = () => {
   const pathname = history.location.pathname;
 
   React.useEffect(() => {
-    if (pathname !== "/" && !searchPhotos.data && !searchPhotos.isLoading) {
+    if (
+      pathname !== "/" &&
+      pathname !== "/mini-unsplash/" &&
+      !searchPhotos.data &&
+      !searchPhotos.isLoading
+    ) {
       searchPhotos.mutate(pathname.substring(1));
     }
   }, [pathname, searchPhotos]);
 
   const resource = React.useMemo(
-    () => (pathname === "/" ? fetchPhotos.data : searchPhotos.data?.results),
+    () =>
+      pathname === "/" || pathname === "/mini-unsplash/"
+        ? fetchPhotos.data
+        : searchPhotos.data?.results,
     [searchPhotos, pathname, fetchPhotos]
   );
 
   const isFetching = React.useMemo(
-    () => (pathname === "/" ? fetchPhotos.isFetching : searchPhotos.isLoading),
+    () =>
+      pathname === "/" || pathname === "/mini-unsplash/"
+        ? fetchPhotos.isFetching
+        : searchPhotos.isLoading,
     [searchPhotos, pathname, fetchPhotos]
   );
 

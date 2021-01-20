@@ -7,6 +7,8 @@ import ImageGrid from "./components/image-grid";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
 import { Animate } from "react-simple-animate";
+import Modal from "./components/modal";
+
 import "./index.css";
 
 // const styles = {
@@ -275,6 +277,7 @@ function App() {
 
   return (
     <div>
+      {/* <Modal /> */}
       <Hero />
       <ImageGrid data={resource} isFetching={isFetching} />
     </div>
