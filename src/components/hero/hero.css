@@ -1,0 +1,12 @@
+.hero__centralize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__root {
+  width: 100%;
+  position: relative;
+  height: 25em;
+  background-color: #ccc;
+}

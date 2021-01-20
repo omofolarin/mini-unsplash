@@ -1,0 +1,30 @@
+.imageGrid__centralize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 8px;
+}
+
+.imageGrid__root {
+  width: 80%;
+  margin: 0 auto;
+  height: auto;
+  position: relative;
+  top: -5em;
+  z-index: 2;
+}
+
+@media screen and (max-width: 480px) {
+  .grid {
+    grid-auto-rows: 20px;
+  }
+  .imageGrid__root {
+    width: 100%;
+  }
+}
